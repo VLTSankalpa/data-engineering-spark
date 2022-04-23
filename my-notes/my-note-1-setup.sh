@@ -59,3 +59,18 @@ http://34.125.220.158:8889/lab?token=bc921e78dc5461022dd5106eb73d3fe0abb95a02862
 docker-compose exec pg.itversity.com bash
 # directly enter psql 
 docker-compose exec pg.itversity.com psql -U postgres
+
+psql -h localhost -p 5432 -d itversity_sms_db -U itversity_sms_user -W
+
+
+docker container create \
+    --name my_pg \
+    -p 9999:5432 \
+    -h my_pg \
+    -e POSTGRES_PASSWORD=itversity \
+    postgres
+
+
+docker exec \
+    -it my_pg \
+    psql -U postgres
