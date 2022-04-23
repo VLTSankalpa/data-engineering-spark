@@ -55,3 +55,7 @@ sshuttle -r tharindu_gpc@34.125.220.158 0/0
 # now we can access from our local pc browser to jupyter runtime
 http://34.125.220.158:8889/lab?token=bc921e78dc5461022dd5106eb73d3fe0abb95a02862f8ac4
 
+# enter bash of postgres docker
+docker-compose exec pg.itversity.com bash
+# directly enter psql 
+docker-compose exec pg.itversity.com psql -U postgres
