@@ -1,3 +1,4 @@
+# Clone repo and inspect docker-compose file
 
 ```shell
 git clone https://github.com/VLTSankalpa/data-engineering-spark.git
@@ -5,7 +6,7 @@ cd data-engineering-spark/
 ls -ltrh
 cat docker-compose.yaml
 ```
-
+# itvdflab service
 * python and jupyter in itvdflab service
 * SQL and postgres in pg.itversity.com service
 * itvdflab service has volume bind to itversity-material dirctory
@@ -21,6 +22,7 @@ docker-compose up -d --build itvdflab
 docker-compose stop pg.itversity.com
 ```
 * if we try to bring up itvdflab it will bring up pg.itversity.com as well
+
 ```shell
 docker-compose start itvdflab
 
@@ -44,6 +46,7 @@ sudo apt install pip
 pip install jupyter lab
 ```
 * this will start jupyter lab bind to local ip (127.0.0.1)
+
 ```shell
 jupyter lab 
 ```
@@ -51,7 +54,7 @@ jupyter lab
 ```shell
 jupyter lab --ip 10.182.0.2
 ```
-* we can't use public ip to start jupyter as the public ip is not bounded to VM (its a load balancer)
+* we cant use public ip to start jupyter as the public ip is not bounded to VM (its a load balancer)
 
 * we also can run jupyter bind to all the ips with universal ip (0.0.0.0)
 ```shell
@@ -74,10 +77,12 @@ sshuttle -r tharindu_gpc@34.125.220.158 0/0
 http://34.125.220.158:8889/lab?token=bc921e78dc5461022dd5106eb73d3fe0abb95a02862f8ac4
 ```
 * enter bash of postgres docker
+
 ```shell
 docker-compose exec pg.itversity.com bash
 ```
 * directly enter psql 
+
 ```shell
 docker-compose exec pg.itversity.com psql -U postgres
 
