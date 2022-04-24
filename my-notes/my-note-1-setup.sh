@@ -9,11 +9,11 @@ cat docker-compose.yaml
 
 # itvdflab service
 
-Python and jupyter in itvdflab service
+#### Python and jupyter in itvdflab service
 
-SQL and postgres in pg.itversity.com service
+#### SQL and postgres in pg.itversity.com service
 
-itvdflab service has volume bind to itversity-material dirctory
+#### itvdflab service has volume bind to itversity-material dirctory
 
 
 
@@ -23,12 +23,12 @@ docker-compose up -d --build itvdflab
 
 
 
-This will build itvdflab and pg.itversity.com both docker compose services 
+#### This will build itvdflab and pg.itversity.com both docker compose services 
 
-itvdflab depend on pg.itversity.com
+#### itvdflab depend on pg.itversity.com
 
 
-Therefore if we stop pg.itversity.com it will stop itvdflab as well
+#### Therefore if we stop pg.itversity.com it will stop itvdflab as well
 
 
 
@@ -38,7 +38,7 @@ docker-compose stop pg.itversity.com
 
 
 
-If we try to bring up itvdflab it will bring up pg.itversity.com as well
+#### If we try to bring up itvdflab it will bring up pg.itversity.com as well
 
 
 
@@ -53,7 +53,7 @@ docker ps
 
 
 
-Get jupyter token from docker python service
+#### Get jupyter token from docker python service
 
 
 
@@ -67,7 +67,7 @@ sudo docker-compose exec itvdflab bash -c "cat .local/share/jupyter/runtime/jpse
 
 
 
-To setup and access jupyyerlab hosted in Google cloud VM
+#### To setup and access jupyyerlab hosted in Google cloud VM
 
 
 
@@ -80,7 +80,7 @@ pip install jupyter lab
 
 
 
-This will start jupyter lab bind to local ip (127.0.0.1)
+#### This will start jupyter lab bind to local ip (127.0.0.1)
 
 
 
@@ -90,7 +90,7 @@ jupyter lab
 
 
 
-This will start jupyter lab bind to private ip
+#### This will start jupyter lab bind to private ip
 
 
 
@@ -100,10 +100,10 @@ jupyter lab --ip 10.182.0.2
 
 
 
-We cant use public ip to start jupyter as the public ip is not bounded to VM (its a load balancer)
+#### We cant use public ip to start jupyter as the public ip is not bounded to VM (its a load balancer)
 
 
-We also can run jupyter bind to all the ips with universal ip (0.0.0.0)
+#### We also can run jupyter bind to all the ips with universal ip (0.0.0.0)
 
 
 
